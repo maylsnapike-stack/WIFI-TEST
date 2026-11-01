@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    @apply font-sans;
+  }
+  body {
+    @apply bg-ink-900 text-slate-100 antialiased;
+    overflow-x: hidden;
+    margin: 0;
+  }
+  :focus-visible {
+    outline: 2px solid #22d3ee;
+    outline-offset: 2px;
+  }
+  button {
+    touch-action: manipulation;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply rounded-3xl border border-white/10 bg-white/[0.04] shadow-[0_10px_40px_-14px_rgba(0,0,0,0.7)] backdrop-blur-md;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-[3.5rem] w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 px-8 text-base font-bold tracking-wide text-ink-950 shadow-[0_0_44px_-10px_rgba(34,211,238,0.75)] transition duration-200 hover:brightness-110 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:brightness-100 sm:w-auto sm:min-w-[16rem];
+  }
+
+  .btn-ghost {
+    @apply inline-flex min-h-[2.75rem] items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 text-sm font-medium text-slate-200 transition duration-200 hover:bg-white/10 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .bg-aurora {
+    background:
+      radial-gradient(60% 45% at 50% -8%, rgba(34, 211, 238, 0.18), transparent 70%),
+      radial-gradient(40% 40% at 95% 28%, rgba(59, 130, 246, 0.15), transparent 70%),
+      radial-gradient(40% 40% at 0% 62%, rgba(99, 102, 241, 0.12), transparent 70%),
+      #050816;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
